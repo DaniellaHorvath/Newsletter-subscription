@@ -9,6 +9,6 @@ On the first page, users can select which **topics** they are interested (see `d
 Users can move between pages using "Next" and "Back" buttons.
 
 Low fidelity wireframes have been included in the `wireframes` directory:
+
 - [Topic and newsletter pages](wireframes/select-options.png)
 - [Thank you page](wireframes/thanks.png)
-

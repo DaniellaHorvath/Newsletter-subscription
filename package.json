@@ -1,0 +1,31 @@
+{
+  "name": "newsletter-subscription",
+  "version": "1.0.0",
+  "description": "Build a simple three-page onboarding journey for a web application.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watchAll",
+    "format": "prettier --write ."
+  },
+  "jest": {
+    "testEnvironment": "jsdom"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DaniellaHorvath/Newsletter-subscription.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/DaniellaHorvath/Newsletter-subscription/issues"
+  },
+  "homepage": "https://github.com/DaniellaHorvath/Newsletter-subscription#readme",
+  "devDependencies": {
+    "jest": "^30.4.2",
+    "jest-environment-jsdom": "^30.4.1",
+    "prettier": "^3.9.3"
+  }
+}
