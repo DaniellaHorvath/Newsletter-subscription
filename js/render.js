@@ -103,30 +103,51 @@ const renderService = {
     btn.className = `option-card ${isInitiallySelected ? "selected" : ""}`;
     btn.setAttribute("aria-pressed", isInitiallySelected);
 
-    let iconDiv = null;
+    const iconDiv = document.createElement("div");
+    iconDiv.className = "icon-placeholder";
 
-    if (isNewsletter && item.frequency) {
-      const badge = document.createElement("div");
-      badge.className = "badge";
-      badge.textContent = item.frequency;
-      btn.appendChild(badge);
-    } else {
-      iconDiv = document.createElement("div");
-      iconDiv.className = "icon-placeholder";
-      iconDiv.textContent = isInitiallySelected ? "✓" : "⭐";
-      btn.appendChild(iconDiv);
-    }
+    const iconImg = document.createElement("img");
+    const imagePath = item.img || `asset/icons/${item.id}.svg`;
+
+    iconImg.className = "option-icon";
+    iconImg.src = imagePath;
+    iconImg.alt = `${item.title} icon`;
+
+    // Fallback for icon error
+    iconImg.onerror = () => {
+      iconImg.style.display = "none";
+      iconDiv.textContent = "⭐";
+    };
+
+    iconDiv.appendChild(iconImg);
+    btn.appendChild(iconDiv);
+
+    const textContent = document.createElement("div");
+    textContent.className = "option-text-content";
+
+    const titleWrapper = document.createElement("div");
+    titleWrapper.className = "option-title-wrapper";
 
     const titleEl = document.createElement("div");
     titleEl.className = "option-title";
     titleEl.textContent = item.title;
+    titleWrapper.appendChild(titleEl);
+
+    if (isNewsletter && item.frequency) {
+      const badge = document.createElement("span"); // CHANGED: Span instead of div for inline-flex
+      badge.className = "badge";
+      badge.textContent = item.frequency;
+      titleWrapper.appendChild(badge);
+    }
 
     const contentEl = document.createElement("div");
     contentEl.className = "option-content";
     contentEl.textContent = item.description;
 
-    btn.appendChild(titleEl);
-    btn.appendChild(contentEl);
+    //  Append title and desc to the text wrapper, then append wrapper to button
+    textContent.appendChild(titleWrapper);
+    textContent.appendChild(contentEl);
+    btn.appendChild(textContent);
 
     // Attach click listener to handle ONLY local UI changes
     // to prevent the jump/re-render of the entire view
@@ -136,10 +157,6 @@ const renderService = {
       const isNowSelected = selectedSet.has(item.id);
       btn.classList.toggle("selected", isNowSelected);
       btn.setAttribute("aria-pressed", isNowSelected);
-
-      if (iconDiv) {
-        iconDiv.textContent = isNowSelected ? "✓" : "⭐";
-      }
     });
 
     return btn;

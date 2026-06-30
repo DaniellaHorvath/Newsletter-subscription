@@ -4,31 +4,37 @@
   "choices": [
     {
       "id": "news",
+      "img": "asset/icons/news-svgrepo-com.svg",
       "title": "News & Current Affairs",
       "description": "Stay informed with politics and the environment, plus the latest from the US."
     },
     {
       "id": "lifestyle",
+      "img": "asset/icons/shop-svgrepo-com.svg",
       "title": "Lifestyle & Luxury",
       "description": "Discover fashion trends, travel inspiration, restaurant reviews and tips for living in style."
     },
     {
       "id": "puzzles",
+      "img": "asset/icons/puzzle-piece-svgrepo-com.svg",
       "title": "Puzzle & Crosswords",
       "description": "Challenge yourself with our best crossword clues and quiz questions, plus insights from our puzzles editor."
     },
     {
       "id": "sports",
+      "img": "asset/icons/sports-tennis-svgrepo-com.svg",
       "title": "Sports",
       "description": "From football to Wimbledon, enjoy exclusive updates and coverage of top events."
     },
     {
       "id": "arts",
+      "img": "asset/icons/art-design-paint-pallet-format-text-svgrepo-com.svg",
       "title": "Arts & Culture",
       "description": "Explore books, theatre, and TV with expert reviews and recommendations."
     },
     {
       "id": "business",
+      "img": "asset/icons/money-business-and-finance-svgrepo-com.svg",
       "title": "Business & Money",
       "description": "Expert advice on personal finance, property, and insights for entrepreneurs"
     }
