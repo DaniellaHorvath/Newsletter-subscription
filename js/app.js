@@ -108,13 +108,13 @@ export const app = {
         );
         break;
       case 4:
-        renderService.renderStep4()
+        renderService.renderStep4();
         break;
     }
   },
 };
 
 // Jest automatically sets process.env.NODE_ENV = 'test', so this safely ignores the auto-start during testing.
-if (typeof process === 'undefined' || process.env.NODE_ENV !== 'test') {
-    app.init();
+if (typeof process === "undefined" || process.env.NODE_ENV !== "test") {
+  app.init();
 }

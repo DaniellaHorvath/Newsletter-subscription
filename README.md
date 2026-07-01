@@ -9,7 +9,7 @@ This app guides users through a simple onboarding journey:
 1. Choose interested topics
 2. Choose newsletters to subscribe to
 3. Review a final summary of their selections
-A responsive, three-step onboarding flow built with vanilla JavaScript using a modular structure.
+   A responsive, three-step onboarding flow built with vanilla JavaScript using a modular structure.
 
 ## Project overview
 

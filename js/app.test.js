@@ -2,8 +2,8 @@ import { app } from "./app";
 import { renderService } from "./render";
 import { dataService } from "./data";
 
-jest.mock('./render');
-jest.mock('./data');
+jest.mock("./render");
+jest.mock("./data");
 
 describe("app", () => {
   beforeEach(() => {
@@ -17,7 +17,7 @@ describe("app", () => {
     jest.clearAllMocks();
   });
 
-  it('should handle handleNext increments state and triggers render focus', () => {
+  it("should handle handleNext increments state and triggers render focus", () => {
     renderService.elements = { pageTitle: { focus: jest.fn() } };
 
     app.handleNext();
