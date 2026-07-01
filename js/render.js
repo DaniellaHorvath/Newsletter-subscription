@@ -1,4 +1,4 @@
-const renderService = {
+export const renderService = {
   elements: {
     btnBack: document.getElementById("btn-back"),
     btnNext: document.getElementById("btn-next"),
@@ -72,9 +72,9 @@ const renderService = {
   },
 
   renderStep3(topicsData, newsData, selectedTopics, selectedNews) {
-    this.elements.pageTitle.textContent = "Thank you for your submission!";
+    this.elements.pageTitle.textContent = "Review your choices!";
     this.elements.pageContent.textContent =
-      "Your preferences have been saved successfully.";
+      "Please review your selected topics and newsletters before confirming your preferences.";
 
     const container = document.createElement("div");
     container.className = "summary-container";
@@ -93,6 +93,14 @@ const renderService = {
     container.appendChild(topicsBox);
     container.appendChild(newsBox);
     this.elements.contentArea.appendChild(container);
+  },
+
+  renderStep4() {
+    this.elements.pageTitle.textContent = 'Thank you for your submission!';
+    this.elements.pageContent.textContent = 'Your preferences have been saved successfully.'
+
+    const successContainer = document.createElement('div');
+    successContainer.className = 'success-container';
   },
 
   // --- Component Builders ---
@@ -195,3 +203,4 @@ const renderService = {
     return box;
   },
 };
+

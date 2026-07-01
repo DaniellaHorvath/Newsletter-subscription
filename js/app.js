@@ -1,7 +1,10 @@
-const app = {
+import { dataService } from "./data.js";
+import { renderService } from "./render.js";
+
+export const app = {
   state: {
     currentStep: 1,
-    totalSteps: 3,
+    totalSteps: 4,
     selectedTopics: new Set(),
     selectedNewsletters: new Set(),
   },
@@ -104,9 +107,14 @@ const app = {
           this.state.selectedNewsletters,
         );
         break;
+      case 4:
+        renderService.renderStep4()
+        break;
     }
   },
 };
 
-// Bootstrap the application
-app.init();
+// Jest automatically sets process.env.NODE_ENV = 'test', so this safely ignores the auto-start during testing.
+if (typeof process === 'undefined' || process.env.NODE_ENV !== 'test') {
+    app.init();
+}

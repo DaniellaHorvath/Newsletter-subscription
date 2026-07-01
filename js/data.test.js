@@ -1,4 +1,4 @@
-const { dataService } = require("./data");
+import { dataService } from "./data";
 
 describe("dataService", () => {
   beforeEach(() => {

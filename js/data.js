@@ -1,4 +1,4 @@
-const dataService = {
+export const dataService = {
   async fetchTopics() {
     try {
       const response = await fetch("data/topics.json"); // (Preview fallback)
@@ -21,4 +21,3 @@ const dataService = {
   },
 };
 
-module.exports = { dataService };

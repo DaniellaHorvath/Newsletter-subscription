@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/DaniellaHorvath/Newsletter-subscription#readme",
   "devDependencies": {
+    "@babel/preset-env": "^8.0.2",
     "jest": "^30.4.2",
     "jest-environment-jsdom": "^30.4.1",
     "prettier": "^3.9.3"
